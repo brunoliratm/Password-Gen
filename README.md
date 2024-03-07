@@ -10,15 +10,14 @@
  - <strong>:lock:Secure password generation:</strong> Passwords are composed of a random mix of letters, numbers, and symbols, ensuring strength and unpredictability.
  - <strong>:package:Password storage:</strong> Conveniently view and access previously generated passwords within the application.
  - <strong>:zombie:User-friendly interface:</strong> Interact with an intuitive menu-driven interface, making it easy to navigate and use.
+</br>
    
 ## :fire:Code 
 <p><a href="PWGen.py">(Click here to view the code)</a></p>
 
-![Project](images/principal.png)
 
 </br>
-
-
+</br>
 
 
 ## :open_file_folder:Installation:
