@@ -43,5 +43,5 @@ to discuss what you would like to change. </br>
 </br>
 
 <div align="center">
-<i ><strong> ===Get started today and experience password security made simple!=== </strong></i>
+<i ><strong> ==Get started today and experience password security made simple!== </strong></i>
 </div>
