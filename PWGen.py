@@ -28,12 +28,13 @@ import random
 import sys
 import time
 import string
+import csv
 
 # List of valid characters
 characters = string.ascii_letters + string.digits + string.punctuation.replace(" ", "")
 
-# Array to store the passwords
-passwords = []
+# File to store the passwords
+password_file = "passwords.csv"
 
 def generate_password():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -48,7 +49,11 @@ def generate_password():
             generate_password()
         else:
             password = "".join(random.choice(characters) for _ in range(length))
-            passwords.append(password)
+
+            with open(password_file, 'a', newline='') as csvfile:
+                password_writer = csv.writer(csvfile)
+                password_writer.writerow([password])
+
             print("Password: ", password)
             print("Password generated successfully!")
             time.sleep(3)
@@ -61,6 +66,14 @@ def generate_password():
 
 def view_passwords():
     os.system('cls' if os.name == 'nt' else 'clear')
+    passwords = [] 
+
+    # Read passwords from the CSV file
+    with open(password_file, 'r') as csvfile:
+        password_reader = csv.reader(csvfile)
+        for row in password_reader:
+            passwords.append(row[0])  
+
     if not passwords:
         print("No passwords generated yet.")
         time.sleep(2)
@@ -68,6 +81,7 @@ def view_passwords():
     else:
         print("Generated passwords:")
         print("")
+        time.sleep(1)
         for i, password in enumerate(passwords, start=1):
             print(f"{i}. {password}")
         input("Press enter to go back...")
